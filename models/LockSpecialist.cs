@@ -8,7 +8,7 @@ public class LockSpecialist : IRobber
     public void PerformSkill(Bank bank)
     {
         bank.VaultScore -= SkillLevel;
-        Console.WriteLine($"{Name} is picking the vault lock. Decreased vault security by ${SkillLevel} points.");
+        Console.WriteLine($"{Name} is picking the vault lock. Decreased vault security by {SkillLevel} points.");
         if (bank.VaultScore <= 0)
         {
             Console.WriteLine($"{Name} has opened the vault!");

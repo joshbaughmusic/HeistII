@@ -223,7 +223,36 @@ while (selectMoreCrew != "N" && totalPercentageCutOfSelectedCrew < 100 && rolode
     }
 }
 
-Console.WriteLine($"Goodbye!");
+foreach (IRobber r in assembledCrew)
+{
+    r.PerformSkill(bank);
+}
+if (!bank.IsSecure) {
+    Console.WriteLine($"The heist was a success! The total take was ${bank.CashOnHand}");
+    decimal cashAmountLeftAfterPayouts = bank.CashOnHand;
+    foreach (IRobber r in assembledCrew)
+    {
+        decimal convertToPercentage = (decimal)r.PercentageCut / 100.0m;
+        decimal earningsTakeen = bank.CashOnHand * convertToPercentage;
+        Console.WriteLine($"{r.Name} took ${earningsTakeen}.");
+        cashAmountLeftAfterPayouts -= earningsTakeen;
+    }
+
+    Console.WriteLine($"The remainder for you to take is ${cashAmountLeftAfterPayouts}.");
+    
+
+    Console.WriteLine($"Press any key to end the game...");
+    Console.ReadKey();
+    Console.Clear();
+
+}
+else
+{
+    Console.WriteLine($"The heist was a failure");
+    Console.WriteLine($"Press any key to end the game...");
+    Console.ReadKey();
+    Console.Clear();
+}
 
 
 

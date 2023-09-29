@@ -8,7 +8,7 @@ public class Hacker : IRobber
     public void PerformSkill(Bank bank)
     {
         bank.AlarmScore -= SkillLevel;
-        Console.WriteLine($"{Name} is hacking the alarm system. Decreased alarm security by ${SkillLevel} points.");
+        Console.WriteLine($"{Name} is hacking the alarm system. Decreased alarm security by {SkillLevel} points.");
         if (bank.AlarmScore <= 0)
         {
             Console.WriteLine($"{Name} has disabled the alarms!");
