@@ -14,4 +14,9 @@ public class LockSpecialist : IRobber
             Console.WriteLine($"{Name} has opened the vault!");
         }
     }
+    public void PrintDetails()
+    {
+        Console.WriteLine($"A lock specialist with a skill level of {SkillLevel}. Takes a {PercentageCut}% of all the earnings.");
+
+    }
 }

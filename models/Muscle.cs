@@ -14,4 +14,10 @@ public class Muscle : IRobber
             Console.WriteLine($"{Name} has eliminated the remaining security guards!");
         }
     }
+
+    public void PrintDetails()
+    {
+        Console.WriteLine($"Pure muscle with a skill level of {SkillLevel}. Takes a {PercentageCut}% of all the earnings.");
+
+    }
 }

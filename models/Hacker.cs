@@ -14,4 +14,9 @@ public class Hacker : IRobber
             Console.WriteLine($"{Name} has disabled the alarms!");
         }
     }
+    public void PrintDetails()
+    {
+        Console.WriteLine($"A hacker with a skill level of {SkillLevel}. Takes a {PercentageCut}% of all the earnings.");
+        
+    }
 }

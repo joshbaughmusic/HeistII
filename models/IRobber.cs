@@ -7,6 +7,10 @@ public interface IRobber
     int PercentageCut { get; set; }
     void PerformSkill(Bank bank)
     {
+
+    }
+    void PrintDetails()
+    {
         
     }
 }
